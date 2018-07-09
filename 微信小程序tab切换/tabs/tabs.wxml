@@ -1,0 +1,10 @@
+<view class="view-section">
+      <block wx:for="{{items}}" wx:key="uniqued">
+        <view class="btn {{selected == index ? 'show':'hide'}}" bindtap="btn" data-index="{{index}}">{{item.name}}</view>
+      </block>
+</view>
+<view class="view-section1">
+      <block wx:for="{{yemians}}" wx:key="uniqued">
+        <view class="content {{selected == index ? 'show1':'hide1'}}">{{item.content}}</view>
+      </block>
+</view>

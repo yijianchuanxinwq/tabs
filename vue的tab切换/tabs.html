@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab切换</title>
+				<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#app{
+				width: 800px;
+				margin: auto;
+			}
+			#app ul{
+				display: flex;
+			}
+			#app ul li{
+				flex: 1;
+				text-align: center;
+				list-style: none;
+				border: 1px solid red;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 5px 5px 0px 0px;
+			}
+			#app div{
+				width: 99.7%;
+				height: 300px;
+				text-align: center;
+				line-height: 300px;
+				border: 1px solid red;
+			}
+			.active{
+				background: green;
+				color: red;
+			}
+			/*.show{
+				display: inline-block;
+			}*/
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!--创建切换的点击按钮-->
+			<ul>
+				<li v-for="(item,index) in tabs" v-bind:class="{active:index == num}"
+             		v-on:click="tab(index)">{{item}}
+				</li>
+			</ul>
+			<!--创建切换的页面-->
+	        <div v-for='(content,index) in contents'  v-show="index == num">
+	        	{{content}}
+	        </div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				tabs:["页面一","页面二","页面三"],
+				contents:["内容一","内容二","内容三"],
+				num:0
+			},
+			methods:{
+				tab(e){
+					this.num=e;
+				}
+			}
+		})
+	</script>
+</html>

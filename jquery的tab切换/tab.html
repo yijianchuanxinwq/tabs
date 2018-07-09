@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab切换</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.content{
+				width: 800px;
+				margin: auto;
+			}
+			.content ul{
+				display: flex;
+			}
+			.content ul li{
+				flex: 1;
+				text-align: center;
+				list-style: none;
+				border: 1px solid red;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 5px 5px 0px 0px;
+			}
+			.container{
+				width: 99.7%;
+				height: 300px;
+				text-align: center;
+				line-height: 300px;
+				border: 1px solid red;
+				display: none;
+			}
+			.active{
+				background: green;
+				color: red;
+			}
+			.show{
+				display: inline-block;
+			}
+		</style>
+		<script src="jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content">
+			<ul>
+				<li class="active">页面一</li>
+				<li>页面二</li>
+				<li>页面三</li>
+			</ul>
+			<div class="container show">
+				内容一
+			</div>
+			<div class="container">
+				内容二
+			</div>
+			<div class="container">
+				内容三
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$("ul").on("click",function(e){
+			$("ul li").removeClass("active");
+			var e=window.event || e;
+			var target=e.target || e.srcElement;
+			$(target).addClass("active");
+			$(".container").removeClass("show");
+			$($(".container").eq($(target).index())).addClass("show");
+		})
+	</script>
+</html>

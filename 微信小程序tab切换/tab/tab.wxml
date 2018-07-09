@@ -1,0 +1,8 @@
+<!--tab切换对应的切换按钮-->
+<view class="page-tab">
+    <button class="btn" type="{{selected?'primary':'default'}}" bindtap="selected">页面一</button>
+    <button class="btn" type="{{selected1?'primary':'default'}}" bindtap="selected1">页面二</button>
+</view>
+<!--对应的切换页面，当button类型为primary时显示页面-->
+<view class="content {{selected?'show':'hide'}}">内容一</view>
+<view class="content {{selected1?'show':'hide'}}">内容二</view>

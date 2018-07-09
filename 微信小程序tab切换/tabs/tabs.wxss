@@ -1,0 +1,35 @@
+.view-section{
+  display: flex;
+  width: 102%;
+  margin-left: -1%;
+}
+.btn{
+  flex: 1;
+  border: 2rpx solid lightgray;
+  display: inline-block;
+  text-align: center;
+  padding: 10rpx 0rpx;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+.show{
+  background: green;
+  color: white;
+  border: 2rpx solid green;
+}
+.hide{
+  background: white;
+  color: black;
+  border: 2rpx solid lightgray;
+}
+
+
+.content{
+  width: 100%;
+  text-align: center;
+}
+.show1{
+  display: inline-block;
+}
+.hide1{
+  display: none;
+}

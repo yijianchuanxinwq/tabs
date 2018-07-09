@@ -1,0 +1,23 @@
+.page-tab{
+  display: flex;
+  width: 102%;
+  margin-left:-1%; 
+}
+.page-tab button{
+  flex: 1;
+  border-radius: 5px 5px 0px 0px;
+}
+button::after {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.content{
+  width: 100%;
+  text-align: center;
+}
+.show{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
